@@ -2,41 +2,46 @@
  
 import { usePathname } from 'next/navigation'
 import Link from 'next/link'
-import { useEffect, useRef, useState } from 'react'
+import PlayIcon from './play_icon'
 
 export default function Navbar() {
-	// let linkClass = "px-3 flex items-center hover:border-red-700 hover:border-b-2 border-b-2 border-transparent transition ease-in-out h-full " 
-	const activeClass = "border-b-2 border-red-700 "
 	const pathname = usePathname()
-	let windowPathName = useRef("")
-	const [isActive, setIsActive] = useState(false)
-	const linkClass = "px-3 flex items-center hover:border-red-700 hover:border-b-2 border-b-2 border-transparent transition ease-in-out h-full "
-	const linkActiveClass = useRef("")
+	const activeClass = "border-b-2 border-red-700 "
+	const linkClass = "px-3 flex items-center hover:border-red-700 hover:border-b-2 transition ease-in-out h-full "
 
-	useEffect(() => {
-		if (window.location.pathname == pathname) {
-			windowPathName.current = pathname
-			setIsActive(true)
-			linkActiveClass.current = linkClass.replace("border-transparent", "") + activeClass
+	const navLinks = [
+		{
+			"href": "/",
+			"name" : "HOME"
+		},
+		{
+			"href": "/play",
+			"name": "PLAY",
+		},
+		{
+			"href": "/rules",
+			"name": "RÈGLES"
 		}
-	}, [pathname])
-
+	]
 
 	return (
 		<div className="flex justify-around items-center h-20 border-b-1 shadow-md">
 			<div>LOGO</div>
 			<div className="flex h-full items-center">
-				<Link href="/" className={windowPathName.current == pathname ? linkActiveClass.current : linkClass}>
-					HOME
-				</Link>
-				<Link href="/play" className={windowPathName.current == pathname ? linkActiveClass.current : linkClass}>
-					JEU
-				</Link>
-				<Link href="/rules" className={windowPathName.current == pathname ? linkActiveClass.current : linkClass}>
-					RÈGLES
-				</Link>
+				{navLinks.map((link) => {
+					return (
+						<Link
+							className={pathname == link.href ? (linkClass + activeClass) : linkClass + "border-b-2 border-transparent"}
+							href={link.href}
+							key={link.name}
+          	>
+            	{link.name}
+          	</Link>
+					)
+				})}
 			</div>
-			<button className="bg-red-900 text-white px-3 py-1 rounded hover:bg-red-700">
+			<button className="bg-red-900 text-white px-3 py-1 rounded hover:bg-red-700 flex">
+				<PlayIcon />
 				PLAY
 			</button>
 
