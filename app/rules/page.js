@@ -1,10 +1,10 @@
-import Rules from "@/components/rules";
+import RulesText from "@/components/rules_text";
 import ThemisImage from "@/components/themis";
 
-export default function Home() {
+export default function Rules() {
   return (
 		<div className="flex flex-col items-center">
-    	<Rules />
+    	<RulesText />
     	<ThemisImage />
 		</div>
     
