@@ -11,21 +11,30 @@ export default function Play() {
 	const [play, setPlay] = useState(true)
 	const [isWinner, setIsWinner] = useState(false)
 	const [displayModal, setDisplayModal] = useState(false)
+
 	useEffect(() => {
 		setData(getRandomSentences(sentences))
 	}, [])
+
 	let winnerId = ""
 	if (data) winnerId = getWinnerId(data)
-	const handleClick = (e) => {
-		e.stopPropagation()
+
+	const handleClickAnswer = (e) => {
 		setPlay(false)
 		setDisplayModal(true)
 		let sentenceClicked = e.target
-		console.log(sentenceClicked)
 		if (sentenceClicked.classList.contains("sentence" + winnerId)) {
 			setIsWinner(true)
 		}
 	}
+
+	const handleClickContinue = (e) => {
+		setData(getRandomSentences(sentences))
+		setDisplayModal(false)
+		setIsWinner(false)
+		setPlay(true)
+	}
+
 	if (data) {
 		return (
 			<div className="flex container-card">
@@ -39,12 +48,16 @@ export default function Play() {
 							year={sentence.year}
 							sentence_year={sentence.sentence_year}
 							isWinner={winnerId == sentence.id ? true : false}
-							handleClick={handleClick}
+							handleClick={handleClickAnswer}
 							play={play}
 						/>
 					)
 				})}
-				<Modal display={displayModal} isWinner={isWinner}/>
+				<Modal
+				 display={displayModal} 
+				 isWinner={isWinner}
+				 handleClick={handleClickContinue}
+				/>
 			</div>
 		)
 	}	

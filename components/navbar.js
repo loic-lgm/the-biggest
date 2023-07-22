@@ -40,10 +40,12 @@ export default function Navbar() {
 					)
 				})}
 			</div>
-			<button className="bg-red-900 text-white px-3 py-1 rounded hover:bg-red-700 flex">
-				<PlayIcon />
-				PLAY
-			</button>
+			<Link href="/play">
+				<button className="bg-red-900 text-white px-3 py-1 rounded hover:bg-red-700 flex">
+					<PlayIcon />
+					PLAY
+				</button>
+			</Link>
 
 		</div>
 	)

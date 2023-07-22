@@ -16,7 +16,7 @@ export default function Card({id, description, year, country, sentence_year, isW
 			<div className={"text-3xl sentence" + id}>
 				{country}
 			</div>
-			{true &&
+			{!play &&
 				<div className={"text-3xl sentence" + id}>
 				{sentence_year} mois
 			</div>
