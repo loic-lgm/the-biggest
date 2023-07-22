@@ -9,7 +9,7 @@ import { useEffect, useState } from "react";
 export default function Play() {
 	const [data, setData] = useState()
 	const [play, setPlay] = useState(true)
-	const [isWinner, setIsWinner] = useState()
+	const [isWinner, setIsWinner] = useState(false)
 	const [displayModal, setDisplayModal] = useState(false)
 	useEffect(() => {
 		setData(getRandomSentences(sentences))
@@ -17,33 +17,34 @@ export default function Play() {
 	let winnerId = ""
 	if (data) winnerId = getWinnerId(data)
 	const handleClick = (e) => {
+		e.stopPropagation()
 		setPlay(false)
 		setDisplayModal(true)
+		let sentenceClicked = e.target
+		console.log(sentenceClicked)
+		if (sentenceClicked.classList.contains("sentence" + winnerId)) {
+			setIsWinner(true)
+		}
 	}
 	if (data) {
 		return (
 			<div className="flex container-card">
-				<Card 
-					id={data[0].id} 
-					description={data[0].description} 
-					country={data[0].country} 
-					year={data[0].year}
-					sentence_year={data[0].sentence_year}
-					isWinner={winnerId == data[0].id ? true : false}
-					handleClick={handleClick}
-					play={play}
-				/>
-				<Card
-				id={data[1].id} 
-				description={data[1].description} 
-				country={data[1].country} 
-				year={data[1].year}
-				sentence_year={data[1].sentence_year}
-				isWinner={winnerId == data[1].id ? true : false}
-				handleClick={handleClick}
-				play={play}
-				/>
-				<Modal display={displayModal}/>
+				{data.map((sentence) => {
+					return (
+						<Card 
+							key={sentence.id}
+							id={sentence.id} 
+							description={sentence.description} 
+							country={sentence.country} 
+							year={sentence.year}
+							sentence_year={sentence.sentence_year}
+							isWinner={winnerId == sentence.id ? true : false}
+							handleClick={handleClick}
+							play={play}
+						/>
+					)
+				})}
+				<Modal display={displayModal} isWinner={isWinner}/>
 			</div>
 		)
 	}	

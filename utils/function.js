@@ -13,12 +13,15 @@ const shuffle = (sentences) => {
 
 export const getWinnerId = (sentences) => {
 	let sentencesTime = []
+	let winnerId = ""
 	sentences.forEach(sentence => {
 		sentencesTime.push(sentence.sentence_year)
 	});
 	const biggestSentence = Math.max(...sentencesTime)
 	sentences.map((s) => {
-		s.sentence_year == biggestSentence
-		return s.id
+		if (s.sentence_year == biggestSentence) {
+			winnerId = s.id
+		}
 	})
+	return winnerId
 }
