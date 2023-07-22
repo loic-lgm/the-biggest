@@ -1,0 +1,65 @@
+[
+	{
+		"id": 1,
+		"description": "Vol de canards en plastique",
+		"year": "2001",
+		"country": "France",
+		"sentence_year": 8
+	},
+	{
+		"id": 2,
+		"description": "Possession illégale de bonbons à la menthe",
+		"year": "1998",
+		"country": "Singapour",
+		"sentence_year": 2
+	},
+	{
+		"id": 3,
+		"description": "Coupable de chanter des chansons obscènes en public",
+		"year": "2010",
+		"country": "États-Unis",
+		"sentence_year": 3
+	},
+	{
+		"id": 4,
+		"description": "Tentative de vol de sable sur une plage",
+		"year": "2015",
+		"country": "Italie",
+		"sentence_year": 6
+	},
+	{
+		"id": 5,
+		"description": "Conduite d'un fauteuil roulant en état d'ivresse",
+		"year": "2007",
+		"country": "Allemagne",
+		"sentence_year": 12
+	},
+	{
+		"id": 6,
+		"description": "Harcèlement téléphonique d'une station de radio pour une chanson préférée non diffusée",
+		"year": "2012",
+		"country": "Australie",
+		"sentence_year": 4
+	},
+	{
+		"id": 7,
+		"description": "Utilisation d'un déguisement d'animal dans un zoo pour échapper aux frais d'entrée",
+		"year": "2019",
+		"country": "États-Unis",
+		"sentence_year": 3
+	},
+	{
+		"id": 8,
+		"description": "Vol de coussins de canapé dans un grand magasin",
+		"year": "2008",
+		"country": "Canada",
+		"sentence_year": 1
+	},
+	{
+		"id": 9,
+		"description": "Imitation d'un policier pour obtenir des donuts gratuits",
+		"year": "2011",
+		"country": "États-Unis",
+		"sentence_year": 2
+	}
+]
