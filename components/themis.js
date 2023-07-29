@@ -6,9 +6,10 @@ export default function ThemisImage() {
     <div className="">
       <Image
         src={themis}
-        width={500}
-        height={500}
+        width={200}
+        height={200}
         alt="Picture of themis"
+        className=''
       />
     </div>
   )
