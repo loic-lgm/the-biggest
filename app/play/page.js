@@ -11,6 +11,7 @@ export default function Play() {
 	const [play, setPlay] = useState(true)
 	const [isWinner, setIsWinner] = useState(false)
 	const [displayModal, setDisplayModal] = useState(false)
+	const [score, setScore] = useState(0)
 
 	useEffect(() => {
 		setData(getRandomSentences(sentences))
@@ -25,6 +26,9 @@ export default function Play() {
 		let sentenceClicked = e.target
 		if (sentenceClicked.classList.contains("sentence" + winnerId)) {
 			setIsWinner(true)
+			setScore(score + 1)
+		} else {
+			setScore(0)
 		}
 	}
 
@@ -56,6 +60,7 @@ export default function Play() {
 				<Modal
 				 display={displayModal} 
 				 isWinner={isWinner}
+				 score={score}
 				 handleClick={handleClickContinue}
 				/>
 			</div>

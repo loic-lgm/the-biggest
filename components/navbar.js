@@ -3,6 +3,7 @@
 import { usePathname } from 'next/navigation'
 import Link from 'next/link'
 import PlayIcon from './play_icon'
+import Gavelimage from './gavel'
 
 export default function Navbar() {
 	const pathname = usePathname()
@@ -22,7 +23,9 @@ export default function Navbar() {
 
 	return (
 		<div className="flex justify-around items-center h-20 border-b-1 shadow-md">
-			<div>LOGO</div>
+			<div>
+				<Gavelimage />
+			</div>
 			<div className="flex h-full items-center">
 				{navLinks.map((link) => {
 					return (

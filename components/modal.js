@@ -2,8 +2,9 @@
 import Link from "next/link";
 import TrophyIcon from "./trophy_icon";
 import LoseIcon from "./lose_icon";
+import Gavelimage from "./gavel";
 
-export default function Modal({display, isWinner, handleClick}) {
+export default function Modal({display, isWinner, score, handleClick}) {
 	if (display) {
 		return (
 			<div className="container-modal">
@@ -16,9 +17,13 @@ export default function Modal({display, isWinner, handleClick}) {
 								:	
 									<LoseIcon />
 								}
-								<h3 className="mb-5 text-lg font-normal text-gray-500 dark:text-gray-400">
+								<h3 className="text-lg font-normal text-gray-500 dark:text-gray-400">
 									{isWinner ? "Vous avez gagné !" : "Vous avez perdu !"}
 								</h3>
+								<div className="flex justify-center items-center mb-5 text-gray-500">
+									{score}X
+									<Gavelimage />
+								</div>
 								<button
 								 data-modal-hide="popup-modal" type="button" className="text-white bg-red-900 hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-red-300 dark:focus:ring-red-800 font-medium rounded-lg text-sm inline-flex items-center px-5 py-2.5 text-center mr-2"
 								 onClick={handleClick}
