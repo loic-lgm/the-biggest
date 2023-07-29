@@ -15,10 +15,6 @@ export default function Navbar() {
 			"name" : "HOME"
 		},
 		{
-			"href": "/play",
-			"name": "PLAY",
-		},
-		{
 			"href": "/rules",
 			"name": "RÈGLES"
 		}
