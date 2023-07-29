@@ -61,5 +61,124 @@
 		"year": "2011",
 		"country": "États-Unis",
 		"sentence_year": 2
+	},
+	{
+		"id": 10,
+		"description": "Vol de pastèques",
+		"year": "2015",
+		"country": "États-Unis",
+		"sentence_year": 6
+	},
+	{
+		"id": 11,
+		"description": "Danser nu dans la rue un dimanche",
+		"year": "2012",
+		"country": "Angleterre",
+		"sentence_year": 3
+	},
+	{
+		"id": 12,
+		"description": "Vol de chèvres en état d'ébriété",
+		"year": "2019",
+		"country": "Russie",
+		"sentence_year": 4
+	},
+	{
+		"id": 13,
+		"description": "Chant offensant sous la douche après 22h",
+		"year": "2008",
+		"country": "Canada",
+		"sentence_year": 2
+	},
+	{
+		"id": 14,
+		"description": "Utilisation excessive de feux d'artifice lors d'un mariage",
+		"year": "2016",
+		"country": "Australie",
+		"sentence_year": 5
+	},
+	{
+		"id": 15,
+		"description": "Destruction d'une cabine téléphonique avec un chapeau",
+		"year": "2013",
+		"country": "France",
+		"sentence_year": 1
+	},
+	{
+		"id": 16,
+		"description": "Vandalisme de nains de jardin dans un parc public",
+		"year": "2017",
+		"country": "Allemagne",
+		"sentence_year": 3
+	},
+	{
+		"id": 17,
+		"description": "Utilisation d'un déguisement d'animaux pour effrayer les passants",
+		"year": "2014",
+		"country": "Japon",
+		"sentence_year": 2
+	},
+	{
+		"id": 18,
+		"description": "Harcèlement téléphonique d'une pizzaïolo pour des pizzas non livrées",
+		"year": "2010",
+		"country": "Italie",
+		"sentence_year": 4
+	},
+	{
+		"id": 19,
+		"description": "Manifestation de licornes sans autorisation",
+		"year": "2021",
+		"country": "Belgique",
+		"sentence_year": 1
+	},
+	{
+		"id": 20,
+		"description": "Vandalisme de la voiture d'un voisin avec des ballons d'eau",
+		"year": "2005",
+		"country": "Royaume-Unis",
+		"sentence_year": 2
+	},
+	{
+		"id": 21,
+		"description": "Utilisation excessive de chewing-gums dans un espace public",
+		"year": "2015",
+		"country": "Singapour",
+		"sentence_year": 2
+	},
+	{
+		"id": 22,
+		"description": "Lancer des tomates sur un bâtiment gouvernemental",
+		"year": "2012",
+		"country": "Espagne",
+		"sentence_year": 1
+	},
+	{
+		"id": 23,
+		"description": "Tentative de vol de bouteilles de vin dans un vignoble en déguisement de vigne",
+		"year": "2017",
+		"country": "France",
+		"sentence_year": 5
+	},
+	{
+		"id": 24,
+		"description": "Détention illégale d'un manchot en guise d'animal de compagnie",
+		"year": "2014",
+		"country": "Argentine",
+		"sentence_year": 6
+	},
+	{
+		"id": 25,
+		"description": "Impersonation d'un super-héros pour tenter de stopper un vol de bijoux",
+		"year": "2016",
+		"country": "Japon",
+		"sentence_year": 2
+	},
+	{
+		"id": 26,
+		"description": "Utilisation d'un costume de singe pour voler des bananes dans un marché",
+		"year": "2021",
+		"country": "Brésil",
+		"sentence_year": 3
 	}
 ]
