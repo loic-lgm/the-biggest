@@ -8,6 +8,7 @@ import { getRandomSentences, getWinnerId } from "../../utils/function.js"
 
 import { useEffect, useState } from "react";
 import { setCookie, getCookie, deleteCookie } from 'cookies-next';
+import moment from "moment/moment";
 
 import '../../styles/play.css'
 
@@ -26,16 +27,15 @@ export default function Play() {
 			path: '/play',
 		});
 	}
-	
-	let date = new Date()
-	if (date.getHours() == 0o0 && date.getMinutes() == 0o0) {
-		deleteCookie('already_played', {
-			path: '/play'
-		})
-	}
 
 	useEffect(() => {
 		setData(getRandomSentences(sentences))
+		setTimeout(
+			deleteCookie('already_played', {
+				path: '/play'
+			}),
+			moment("00:00:00", "hh:mm:ss").diff(moment(), 'seconds')
+		);
 	}, [])
 
 	let winnerId = ""
