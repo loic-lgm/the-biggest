@@ -83,7 +83,7 @@ export default function Modal({score, goodAnswer, answeredQuestion, timeLeft, al
 											children={
 												<WhatsappIcon size={32} round={true}/>
 											}
-											title={"Jai réalisé " + score + (score > 1 ? " points" : " point") + " sur Qui a la plus grosse !" }
+											title={"'J'ai réalisé " + score + (score > 1 ? " points" : " point") + " sur Qui a la plus grosse !" }
 										/>
 									</div>
 									<div className="mx-2.5">	
@@ -92,7 +92,7 @@ export default function Modal({score, goodAnswer, answeredQuestion, timeLeft, al
 											children={
 												<TwitterIcon size={32} round={true}/>
 											}
-											title={"Jai réalisé " + score + (score > 1 ? " points" : " point") + " sur Qui a la plus grosse !" }
+											title={"J'ai réalisé " + score + (score > 1 ? " points" : " point") + " sur Qui a la plus grosse !" }
 										/>
 									</div>
 								</div>
