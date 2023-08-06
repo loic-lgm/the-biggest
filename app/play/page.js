@@ -25,12 +25,13 @@ export default function Play() {
 	if (timeLeft == 0) {
 		setCookie('already_played', true, {
 			path: '/play',
+			sameSite: none
 		});
 	}
 	
 	if (moment("24:00:00", "hh:mm:ss").diff(moment(), 'seconds') == 0) {
 		deleteCookie('already_played', {
-			path: '/play'
+			path: 'the-biggest.vercel.app/play'
 		})
 	}
 
