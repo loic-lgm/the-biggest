@@ -25,7 +25,8 @@ export default function Play() {
 	if (timeLeft == 0) {
 		setCookie('already_played', true, {
 			path: '/play',
-			sameSite: 'none'
+			sameSite: 'none',
+			secure: true
 		});
 	}
 	
