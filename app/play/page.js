@@ -19,6 +19,7 @@ export default function Play() {
 	const [timeLeft, setTimeLeft] = useState(20);
 	const [answeredQuestion, setAnsweredQuestion] = useState(0)
 	const [goodAnswer, setGoodAnswer] = useState(0)
+	const [start, setStart] = useState(false)
 	
 	if (timeLeft == 0) {
 		setCookie('already_played', true, {
@@ -54,11 +55,13 @@ export default function Play() {
 	if (data) {
 		return (
 			<div className="flex container-card">
-				{timeLeft > 0 &&
+				{timeLeft > 0 && !getCookie("already_played") &&
 					<Timer 
 						timeLeft={timeLeft} 
 						setTimeLeft={setTimeLeft}
 						setPlay={setPlay}
+						start={start}
+						setStart={setStart}
 					/>
 				}
 				{data.map((sentence) => {
@@ -73,6 +76,7 @@ export default function Play() {
 							isWinner={winnerId == sentence.id ? true : false}
 							handleClick={handleClickAnswer}
 							play={play}
+							start={start}
 						/>
 					)
 				})}

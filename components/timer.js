@@ -1,8 +1,6 @@
 import { useEffect, useState } from "react";
 
-export default function Timer({ timeLeft, setTimeLeft, setPlay }) {
-  const [start, setStart] = useState(false)
-
+export default function Timer({ timeLeft, setTimeLeft, setPlay, start, setStart }) {
   const handleClick = (e) => {
     setStart(true)
   }
