@@ -1,8 +1,51 @@
 /* eslint-disable react/no-unescaped-entities */
+/* eslint-disable react/no-children-prop */
 import Link from "next/link";
 import TrophyIcon from "./trophy_icon";
 import LoseIcon from "./lose_icon";
 import GavelImage from "./gavel";
+import {
+	EmailShareButton,
+	FacebookShareButton,
+	HatenaShareButton,
+	InstapaperShareButton,
+	LineShareButton,
+	LinkedinShareButton,
+	LivejournalShareButton,
+	MailruShareButton,
+	OKShareButton,
+	PinterestShareButton,
+	PocketShareButton,
+	RedditShareButton,
+	TelegramShareButton,
+	TumblrShareButton,
+	TwitterShareButton,
+	ViberShareButton,
+	VKShareButton,
+	WhatsappShareButton,
+	WorkplaceShareButton,
+	EmailIcon,
+  FacebookIcon,
+  FacebookMessengerIcon,
+  HatenaIcon,
+  InstapaperIcon,
+  LineIcon,
+  LinkedinIcon,
+  LivejournalIcon,
+  MailruIcon,
+  OKIcon,
+  PinterestIcon,
+  PocketIcon,
+  RedditIcon,
+  TelegramIcon,
+  TumblrIcon,
+  TwitterIcon,
+  ViberIcon,
+  VKIcon,
+  WeiboIcon,
+  WhatsappIcon,
+  WorkplaceIcon
+} from "react-share";
 
 export default function Modal({score, goodAnswer, answeredQuestion, timeLeft, alreadyPlayed}) {
 	if (!timeLeft && alreadyPlayed) {
@@ -32,6 +75,26 @@ export default function Modal({score, goodAnswer, answeredQuestion, timeLeft, al
 								</button>
 								<div className="text-lg font-normal text-gray-500 dark:text-gray-400">
 									La partie est terminée, revenez demain !
+								</div>
+								<div className="flex m-2.5 justify-center">
+									<div className="mx-2.5">	
+										<WhatsappShareButton 
+											url={'https://the-biggest.vercel.com'} 
+											children={
+												<WhatsappIcon size={32} round={true}/>
+											}
+											title={"Jai réalisé " + score + (score > 1 ? " points" : " point") + " sur Qui a la plus grosse !" }
+										/>
+									</div>
+									<div className="mx-2.5">	
+										<TwitterShareButton 
+											url={'https://the-biggest.vercel.com'} 
+											children={
+												<TwitterIcon size={32} round={true}/>
+											}
+											title={"Jai réalisé " + score + (score > 1 ? " points" : " point") + " sur Qui a la plus grosse !" }
+										/>
+									</div>
 								</div>
 							</div>
 						</div>

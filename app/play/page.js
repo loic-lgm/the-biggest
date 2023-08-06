@@ -27,15 +27,15 @@ export default function Play() {
 			path: '/play',
 		});
 	}
+	
+	if (moment("24:00:00", "hh:mm:ss").diff(moment(), 'seconds') == 0) {
+		deleteCookie('already_played', {
+			path: '/play'
+		})
+	}
 
 	useEffect(() => {
 		setData(getRandomSentences(sentences))
-		setTimeout(
-			deleteCookie('already_played', {
-				path: '/play'
-			}),
-			moment("00:00:00", "hh:mm:ss").diff(moment(), 'seconds')
-		);
 	}, [])
 
 	let winnerId = ""
