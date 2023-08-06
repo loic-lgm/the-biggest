@@ -27,11 +27,13 @@ export default function Timer({ timeLeft, setTimeLeft, setPlay }) {
   }, [timeLeft, start]);
 
   return (
-    <div>
-      <h1>{timeLeft}</h1>
-      {!start &&
-        <button onClick={handleClick}>START</button>
-      }
+    <div className="timer absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
+        <button onClick={handleClick}>
+          <span className="countdown font-mono text-6xl flex flex-col">
+            <span className={timeLeft > 5 ? "text-green-500" : "text-red-800"} style={{"--value":timeLeft}}></span>
+          </span>
+          {!start && "START"}
+        </button>
     </div>
   );
 };

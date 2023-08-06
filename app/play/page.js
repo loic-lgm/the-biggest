@@ -16,7 +16,7 @@ export default function Play() {
 	const [play, setPlay] = useState(true)
 	const [isWinner, setIsWinner] = useState(false)
 	const [score, setScore] = useState(0)
-	const [timeLeft, setTimeLeft] = useState(3);
+	const [timeLeft, setTimeLeft] = useState(20);
 	const [answeredQuestion, setAnsweredQuestion] = useState(0)
 	const [goodAnswer, setGoodAnswer] = useState(0)
 	
