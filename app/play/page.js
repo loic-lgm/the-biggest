@@ -7,8 +7,6 @@ import sentences from "../../data/data.json"
 import { getRandomSentences, getWinnerId } from "../../utils/function.js"
 
 import { useEffect, useState } from "react";
-import { setCookie, getCookie, deleteCookie } from 'cookies-next';
-import moment from "moment/moment";
 
 import '../../styles/play.css'
 
@@ -21,24 +19,18 @@ export default function Play() {
 	const [answeredQuestion, setAnsweredQuestion] = useState(0)
 	const [goodAnswer, setGoodAnswer] = useState(0)
 	const [start, setStart] = useState(false)
-	
-	if (timeLeft == 0) {
-		setCookie('already_played', true, {
-			path: '/play',
-			sameSite: 'none',
-			secure: true
-		});
-	}
-	
-	if (moment("24:00:00", "hh:mm:ss").diff(moment(), 'seconds') == 0) {
-		deleteCookie('already_played', {
-			path: 'the-biggest.vercel.app/play'
-		})
-	}
 
 	useEffect(() => {
 		setData(getRandomSentences(sentences))
-	}, [])
+		if (play) {
+			setIsWinner(false)
+			setScore(0)
+			setTimeLeft(20)
+			setAnsweredQuestion(0)
+			setGoodAnswer(0)
+	
+		}
+	}, [play])
 
 	let winnerId = ""
 	if (data) winnerId = getWinnerId(data)
@@ -54,10 +46,12 @@ export default function Play() {
 		}
 	}
 
+	
+
 	if (data) {
 		return (
 			<div className="flex container-card">
-				{timeLeft > 0 && !getCookie("already_played") &&
+				{timeLeft > 0 &&
 					<Timer 
 						timeLeft={timeLeft} 
 						setTimeLeft={setTimeLeft}
@@ -88,7 +82,6 @@ export default function Play() {
 					goodAnswer={goodAnswer}
 					answeredQuestion={answeredQuestion}
 					timeLeft={timeLeft}
-					alreadyPlayed={getCookie("already_played")}
 				/>
 			</div>
 		)
